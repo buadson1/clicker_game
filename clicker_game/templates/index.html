@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>點擊抽卡遊戲</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <p>歡迎，{{ username }}！<a href="/logout">登出</a></p>
+  <div class="container">
+    <!-- 左邊圖鑑 -->
+    <div class="pokedex">
+      <h2>圖鑑</h2>
+      <button id="reset-button">重置圖鑑</button>
+      <div id="pokedex-grid"></div>
+    </div>
+    <div id="draw-counter-container" style="position:absolute; top:20px; right:20px; background:#fff; padding:8px 12px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+      <div id="draw-counter" style="font-size:18px;">抽卡次數：100</div>
+      <div id="recovery-timer" style="font-size:14px; color:gray;">下一次恢復還有 60 秒</div>
+    </div>  
+    <!-- 右邊抽卡畫面 -->
+    <div class="game-area">
+      <img id="click-image" src="{{ url_for('static', filename='images/1img.png') }}">
+    </div>
+
+    <div id="particles-container"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
